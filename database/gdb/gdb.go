@@ -422,6 +422,7 @@ const (
 	LocalTypeBool        = "bool"
 	LocalTypeJson        = "json"
 	LocalTypeJsonb       = "jsonb"
+	LocalTypeDecimal     = "decimal"
 )
 
 var (

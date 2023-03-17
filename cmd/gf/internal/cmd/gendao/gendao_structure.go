@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-
 	"github.com/gogf/gf/v2/database/gdb"
 	"github.com/gogf/gf/v2/frame/g"
 	"github.com/gogf/gf/v2/text/gregex"
@@ -84,6 +83,10 @@ func generateStructFieldDefinition(
 		} else {
 			typeName = "string"
 		}
+
+	// decimal类型
+	case gdb.LocalTypeDecimal:
+		typeName = "decimal.Decimal"
 	}
 
 	var (
