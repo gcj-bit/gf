@@ -9,6 +9,7 @@ package gdb
 import (
 	"context"
 	"database/sql/driver"
+	"github.com/shopspring/decimal"
 	"reflect"
 	"strings"
 	"time"
@@ -322,6 +323,14 @@ func (c *Core) ConvertValueForLocal(ctx context.Context, fieldType string, field
 		}
 		t, _ := gtime.StrToTime(gconv.String(fieldValue))
 		return t, nil
+
+	case LocalTypeDecimal:
+		if t, ok := fieldValue.(decimal.Decimal); ok {
+			val, _ := decimal.NewFromString(t.String())
+			return val, nil
+		}
+		val, _ := decimal.NewFromString(gconv.String(fieldValue))
+		return val, nil
 
 	default:
 		return gconv.String(fieldValue), nil
