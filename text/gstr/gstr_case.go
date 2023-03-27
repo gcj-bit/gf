@@ -100,7 +100,7 @@ func CaseDelimited(s string, del byte) string {
 
 // CaseDelimitedScreaming converts a string to DELIMITED.SCREAMING.CASE or delimited.screaming.case.
 func CaseDelimitedScreaming(s string, del uint8, screaming bool) string {
-	s = addWordBoundariesToNumbers(s)
+	//s = addWordBoundariesToNumbers(s)
 	s = strings.Trim(s, " ")
 	n := ""
 	for i, v := range s {

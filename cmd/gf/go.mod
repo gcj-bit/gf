@@ -8,7 +8,7 @@ require (
 	github.com/gogf/gf/contrib/drivers/oracle/v2 v2.1.0
 	github.com/gogf/gf/contrib/drivers/pgsql/v2 v2.1.0
 	github.com/gogf/gf/contrib/drivers/sqlite/v2 v2.1.0
-	github.com/gogf/gf/v2 v2.2.2
+	github.com/gogf/gf/v2 v2.3.3
 	github.com/olekukonko/tablewriter v0.0.5
 	golang.org/x/tools v0.2.0
 )
