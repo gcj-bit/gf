@@ -7,6 +7,7 @@
 package gconv
 
 import (
+	"github.com/shopspring/decimal"
 	"reflect"
 	"time"
 
@@ -203,7 +204,9 @@ func doConvert(in doConvertInput) (convertedValue interface{}) {
 			v = Time(in.FromValue)
 		}
 		return &v
-
+	case "decimal.Decimal":
+		v, _ := decimal.NewFromString(String(in.FromValue))
+		return v
 	case "GTime", "gtime.Time":
 		if len(in.Extra) > 0 {
 			if v := GTime(in.FromValue, String(in.Extra[0])); v != nil {

@@ -9,7 +9,6 @@ package gdb
 import (
 	"context"
 	"database/sql/driver"
-	"github.com/gogf/gf/v2/frame/g"
 	"github.com/shopspring/decimal"
 	"reflect"
 	"strings"
@@ -326,7 +325,6 @@ func (c *Core) ConvertValueForLocal(ctx context.Context, fieldType string, field
 		return t, nil
 
 	case LocalTypeDecimal:
-		g.DumpWithType(fieldValue)
 		if t, ok := fieldValue.(decimal.Decimal); ok {
 			val, _ := decimal.NewFromString(t.String())
 			return val, nil
